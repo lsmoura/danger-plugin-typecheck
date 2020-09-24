@@ -1,11 +1,11 @@
 import { danger, warn } from 'danger';
-import eslint from '@lsmoura/danger-plugin-eslint';
-import typecheck from './src';
+// import eslint from '@lsmoura/danger-plugin-eslint';
+// import typecheck from './src';
 
-function includes(whole: string, piece: string) {
-  if (!whole || typeof whole !== 'string') return false;
-  return whole.indexOf(piece) >= 0;
-}
+// function includes(whole: string, piece: string) {
+//   if (!whole || typeof whole !== 'string') return false;
+//   return whole.indexOf(piece) >= 0;
+// }
 
 // No PR is too small to include a description of why you made a change
 if (danger.github.pr.body.length < 10) {
@@ -20,13 +20,13 @@ if (danger.github.pr.assignee === null) {
 }
 
 // Request changes to src also include changes to tests.
-const allFiles = danger.git.modified_files.concat(danger.git.created_files);
-const hasAppChanges = allFiles.some(p => includes(p, 'src/'));
-const hasTestChanges = allFiles.some(p => includes(p, '__tests__/'));
-
-if (hasAppChanges && !hasTestChanges) {
-  warn('This PR does not include changes to tests, even though it affects app code.');
-}
-
-eslint();
-typecheck()
+// const allFiles = danger.git.modified_files.concat(danger.git.created_files);
+// const hasAppChanges = allFiles.some(p => includes(p, 'src/'));
+// const hasTestChanges = allFiles.some(p => includes(p, '__tests__/'));
+//
+// if (hasAppChanges && !hasTestChanges) {
+//   warn('This PR does not include changes to tests, even though it affects app code.');
+// }
+//
+// eslint();
+// typecheck()
