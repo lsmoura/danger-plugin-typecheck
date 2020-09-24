@@ -22,6 +22,6 @@ jobs:
         continue-on-error: true
         run: pnpm ci:typecheck
       - name: Danger
-        run: npx danger ci
+        run: pnpx danger ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
