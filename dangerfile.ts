@@ -1,5 +1,5 @@
 import { danger, warn } from 'danger';
-// import eslint from '@lsmoura/danger-plugin-eslint';
+import eslint from '@lsmoura/danger-plugin-eslint';
 // import typecheck from './src';
 
 // function includes(whole: string, piece: string) {
@@ -28,5 +28,5 @@ if (danger.github.pr.assignee === null) {
 //   warn('This PR does not include changes to tests, even though it affects app code.');
 // }
 //
-// eslint();
+eslint();
 // typecheck()
