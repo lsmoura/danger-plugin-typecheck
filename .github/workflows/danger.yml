@@ -1,0 +1,27 @@
+name: Node CI
+on:
+  - pull_request
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: install pnpm
+        run: npm install -g pnpm
+      - name: install modules
+        run: pnpm install
+      - name: linting
+        continue-on-error: true
+        run: pnpm ci:lint
+      - name: typechecking
+        continue-on-error: true
+        run: pnpm ci:typecheck
+      - name: Danger
+        run: pnpx danger ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
