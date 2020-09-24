@@ -29,4 +29,4 @@ if (hasAppChanges && !hasTestChanges) {
 }
 
 eslint();
-typeCheck()
+typeCheck();
