@@ -1,6 +1,6 @@
 import { danger, warn } from 'danger';
 import eslint from '@lsmoura/danger-plugin-eslint';
-// import typecheck from './src';
+import typeCheck from './src';
 
 function includes(whole: string, piece: string) {
   if (!whole || typeof whole !== 'string') return false;
@@ -29,4 +29,4 @@ if (hasAppChanges && !hasTestChanges) {
 }
 
 eslint();
-// typecheck()
+typeCheck()
