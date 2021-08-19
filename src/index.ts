@@ -9,7 +9,7 @@ function tscCheck(filename: string = 'tsc_raw.log') {
     const log = readFileSync(filename, 'utf8');
     if (log.length) {
       fail('TypeScript hasn\'t passed, see below for full logs');
-      markdown(`### TypeScript Fails\n\n\`\`\`${log}\`\`\``);
+      markdown(`### TypeScript Fails\n\n\`\`\`\n${log}\n\`\`\``);
     }
   }
 }
