@@ -1,6 +1,6 @@
 {
   "name": "@lsmoura/danger-plugin-typecheck",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typecheck plugin for danger using typescript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
